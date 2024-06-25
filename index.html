@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>Profiles Display</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+  </head>
+  <body>
+    <header id="home">
+      <nav class="navbar navbar-expand-lg bg-light custom-navbar">
+        <a class="navbar-brand" href="#">Profile Display</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <img
+          id="light"
+          src="light.png"
+          onclick="myFunction()"
+          style="width: 30px; height: 30px"
+        />
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pro">Profiles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#con">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <script>
+      function change(sw) {
+        var pic;
+        if (sw == 0) {
+          pic = "memoji.png";
+        } else {
+          pic = "memoji12.png";
+        }
+        document.getElementById("myImage").src = pic;
+      }
+      function change2(sw) {
+        var pic;
+        if (sw == 0) {
+          pic = "memoji3.png";
+        } else {
+          pic = "memoji31.png";
+        }
+        document.getElementById("myImage2").src = pic;
+      }
+      function myFunction(sw) {
+        var pic;
+        if (sw == 0) {
+          pic = "light.png";
+          var element = document.body;
+          element.classList.toggle("light-mode");
+          document.getElementById("light").src = pic;
+        } else {
+          pic = "dark.png";
+          var element = document.body;
+          element.classList.toggle("dark-mode");
+          document.getElementById("light").src = pic;
+        }
+      }
+      function openTab2() {
+        window.open("tab2.html", "_blank");
+      }
+    </script>
+    <h1 id="pro">Profiles</h1>
+    <div class="row">
+      <div class="column">
+        <img
+          id="myImage"
+          src="memoji.png"
+          alt="1"
+          style="
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            padding: 50px;
+          "
+          onclick="change(1)"
+        />
+        <p onclick="openTab2()">Roz</p>
+      </div>
+      <div class="column">
+        <img
+          src="memoji2.png"
+          alt="2"
+          style="
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            padding: 50px;
+          "
+        />
+        <p onclick="openTab2()">Jack</p>
+      </div>
+      <div class="column">
+        <img
+          id="myImage2"
+          src="memoji3.png"
+          alt="3"
+          style="
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            padding: 50px;
+          "
+          onclick="change2(1)"
+        />
+        <p>Fatima</p>
+      </div>
+      <div class="column">
+        <img
+          src="memoji4.jpeg"
+          alt="4"
+          style="
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            padding: 50px;
+          "
+        />
+        <p style="display: flex; margin-left: 146px">Mc</p>
+      </div>
+      <div class="column">
+        <img
+          src="memoji5.png"
+          alt="3"
+          style="
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            padding: 50px;
+          "
+        />
+        <p style="display: flex; margin-left: 146px">Ron</p>
+      </div>
+      <div class="column">
+        <img
+          src="35_large.webp"
+          alt="3"
+          style="
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            padding: 50px;
+          "
+        />
+        <p style="display: center; margin-left: 120px">Who is next?</p>
+      </div>
+    </div>
+
+    <div>
+      <br /><br />
+      <section class="bg-light py-3 py-md-5" id="con">
+        <div class="container">
+          <div class="row justify-content-md-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+              <h2 class="mb-4 display-5 text-center">Contact Us</h2>
+              <p class="text-secondary mb-5 text-center">
+                Want to add your profile ? just send us a msg.
+              </p>
+              <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle" />
+            </div>
+          </div>
+        </div>
+
+        <form
+          action="https://formspree.io/f/xjvnzwjj"
+          method="POST"
+          enctype="multipart/form-data"
+          style="padding-left: 500px"
+        >
+          <label>
+            Your Name:
+            <input type="text" name="text" /> </label
+          ><br />
+          <label>
+            Your email:
+            <input type="email" name="email" /> </label
+          ><br />
+          <label>
+            upload your Memoji image:
+            <input type="file" name="upload" /> </label
+          ><br />
+          <label>
+            description to your profile:
+            <input type="text" name="text" /> </label
+          ><br />
+          <button type="submit" id="bt">Send</button>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Information</title>
+  </head>
+  <body>
+    <h2 style="text-align: center">User birthYear</h2>
+
+    <form
+      id="userInfoForm"
+      style="
+        padding: 100px;
+        background-color: palegoldenrod;
+        border-radius: 5%;
+        width: 300px;
+        text-align: center;
+      "
+    >
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required /><br /><br />
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required /><br /><br />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      var form = document.getElementById("userInfoForm");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var name = document.getElementById("name").value;
+        var age = parseInt(document.getElementById("age").value);
+
+        // Display values in the console
+        console.log("Name:", name);
+        console.log("Age:", age);
+
+        var currentYear = new Date().getFullYear();
+        var birthYear = currentYear - age;
+
+        // var message =
+        //   "Hello, " + name + "! You were born in " + birthYear + ".";
+        // document.write(message);
+        var message = document.createElement("div");
+        message.classList.add("message");
+        message.textContent =
+          "Hello, " + name + "! You were born in " + birthYear + ".";
+
+        // Append the message to the document body
+        document.body.appendChild(message);
+      });
+    </script>
+  </body>
+</html>
